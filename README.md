@@ -3,10 +3,10 @@ A computational model for calculating airflows, pressures and temperature values
 
 A brief summary of the files in this project is as follows:
 
-1. rack_app.py
+1. `rack_app.py`
 This contains the GUI of the MDC (Micro Data Center) Rack cooling tool. It is connected to the solver - rack_solver.py
 
-2. rack_solver.py
+2. `rack_solver.py`
 This contains the flow network model as well as steady state and transient solver for the MDC rack model.
 
 ## Running the Micro Data Center Cooling Calculator
