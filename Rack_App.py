@@ -12,7 +12,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
 import base64
-import Rack_solver
+import rack_solver
 import os
 
 Q_id = ['Q_IT', 'Q_AC', 'Q_SP', 'Q_L', 'Q_FD', 'Q_FP', 'Q_RD', 'Q_RP', 'Q_VF_f', 'Q_VF_r']
@@ -754,7 +754,7 @@ def rack_graph_update(size_rack, IT_population, blanking_panels, size_AC, size_U
      Input('Q_graph_layout-id', 'value'), Input('Temp_range-id', 'value')])
 def update_graph(ss_condition, AC_option, VF_option, size_rack, n_IT, q_IT, n_BP, T_AC, T_amb, size_UPS, q_UPS,
                  t_max, size_AC, Q_AC_max, Q_VF_max, P_AC_stag, P_VF_stag, a_FL, a_RL, Q_graph_layout, Temp_range):
-    solveFNM = Rack_solver.FNMsolver(ss_condition, AC_option, VF_option, size_rack, n_IT, q_IT, n_BP, T_AC, T_amb,
+    solveFNM = rack_solver.FNMsolver(ss_condition, AC_option, VF_option, size_rack, n_IT, q_IT, n_BP, T_AC, T_amb,
                                      size_UPS, q_UPS, t_max, size_AC, Q_AC_max, Q_VF_max, P_AC_stag, P_VF_stag,
                                      a_FL, a_RL)
 
@@ -834,7 +834,13 @@ def update_graph(ss_condition, AC_option, VF_option, size_rack, n_IT, q_IT, n_BP
 
 if __name__ == '__main__':
     port = 8071
-    if 'PORT' in os.environ:
-        port = os.environ['PORT']
 
-    app.run_server(debug=True, host='0.0.0.0', port=port)
+    # running on webserver:
+
+    # if 'PORT' in os.environ:
+    #     port = os.environ['PORT']
+    # app.run_server(debug=False, host='0.0.0.0', port=port)
+
+    # running on local host:
+
+    app.run_server(debug=False, port=port)
