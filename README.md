@@ -20,18 +20,20 @@ This contains the flow network model as well as steady state and transient solve
 `pip install scipy`
 
 ### Running on Local host (Windows/Linux)
-Run the following command in the current directory
+Run the following command in the current directory through command-line interface
 `python rack_app.py`
+
+Or run the rack_app.py script through python IDE.
 
 Open following link on web browser:
 http://127.0.0.1:8071/
 
 ### Executing on webserver
-`PORT=8777 python Rack_App.py`
+`PORT=8777 python rack_app.py`
 
 Specify a `PORT` to run webserver on. If no port is specified, port 8070 is
 used.
 
 ### Running on Linux Server 
 Run as a background process on a linux server.
-`PORT=8777 nohup python Rack_App.py &`
+`PORT=8777 nohup python rack_app.py &`
