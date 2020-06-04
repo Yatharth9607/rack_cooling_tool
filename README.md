@@ -23,7 +23,7 @@ This contains the flow network model as well as steady state and transient solve
 Run the following command in the current directory through command-line interface
 `python rack_app.py`
 
-Or run the rack_app.py script through python IDE.
+Or run the `rack_app.py` script through python IDE.
 
 Open following link on web browser:
 http://127.0.0.1:8071/
